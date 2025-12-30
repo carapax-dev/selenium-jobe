@@ -1,20 +1,13 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-import utilities.ConfigurationLoader;
+import org.openqa.selenium.By;
 
-public class HomePage extends PageBase {
+public class HomePage {
 
-    public HomePage(WebDriver driver) {
-        super(driver);
-        openHomePage();
+    public static final By LOGIN_LOGO = By.className("login_logo");
+    public static final By LOGIN_CONTAINER = By.className("login-box");
+    public static final By BOT_COLUMN = By.className("bot_column");
+
+    private HomePage() {
     }
-
-    private void openHomePage() {
-        navigateToUrl(ConfigurationLoader.getInstance().getProperty("baseUrl"));
-    }
-
-
-
-
 }

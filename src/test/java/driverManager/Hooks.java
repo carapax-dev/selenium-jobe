@@ -12,19 +12,19 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 @Log
 public class Hooks {
 
-    private static final int TIME_OUT_IMPLICIT = 10000;
+    private static final int TIME_OUT = 10;
 
     public WebDriver driver;
 
     @BeforeMethod
     public void setUp() {
         driver = DriverManagerFactory.getManager(DriverType.CHROME).getDriver();
-        driver.manage().timeouts().implicitlyWait(TIME_OUT_IMPLICIT, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIME_OUT));
     }
 
     @AfterMethod
@@ -38,7 +38,6 @@ public class Hooks {
             if (iTestResult.getStatus() == ITestResult.FAILURE) {
                 log.severe("There was an error in test execution");
                 File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-                //TODO: when adding parameters I can consider adding + Arrays.toString(iTestResult.getParameters()) + ".jpg") to the file name
                 FileUtils.copyFile(scrFile, new File("errorScreenshots\\" + iTestResult.getName() + ".jpg"));
 
             }

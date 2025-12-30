@@ -17,7 +17,7 @@ public class EdgeDriverManager extends DriverManager {
 
     private EdgeOptions getEdgeOptions() {
         EdgeOptions edgeOptions = new EdgeOptions();
-        edgeOptions.setPageLoadStrategy("normal");
+        edgeOptions.setPageLoadStrategy(org.openqa.selenium.PageLoadStrategy.NORMAL);
         return edgeOptions;
     }
 

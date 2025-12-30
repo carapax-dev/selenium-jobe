@@ -1,4 +1,51 @@
+# IntelliJ IDEA
 /selenium-cucumber.iml
 /.idea/
-/errorScreenshots/
+*.iml
+*.iws
+*.ipr
+
+# Maven
 /target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Screenshots
+/errorScreenshots/
+/screenshots/
+/target/screenshots/
+
+# Logs
+/logs/
+*.log
+
+# Test Results
+/test-output/
+/allure-results/
+/allure-report/
+/cucumber-reports/
+/target/cucumber-reports/
+/.allure/
+
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.env
+configuration.properties.local
+
+# Backup files
+*.bak
+*.tmp
+*~
+
